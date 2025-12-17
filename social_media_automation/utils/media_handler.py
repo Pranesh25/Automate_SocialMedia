@@ -121,7 +121,15 @@ class MediaHandler:
 
         try:
             with Image.open(image_path) as img:
-                img.thumbnail((max_width, max_height), Image.Resampling.LANCZOS)
+                # Use appropriate resampling filter based on Pillow version
+                try:
+                    # Pillow >= 10.0.0
+                    resample_filter = Image.Resampling.LANCZOS
+                except AttributeError:
+                    # Pillow < 10.0.0
+                    resample_filter = Image.LANCZOS
+                
+                img.thumbnail((max_width, max_height), resample_filter)
                 
                 if output_path is None:
                     path = Path(image_path)

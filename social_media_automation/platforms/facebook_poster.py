@@ -8,18 +8,19 @@ from .base import SocialMediaPoster
 class FacebookPoster(SocialMediaPoster):
     """Handle posting to Facebook"""
 
-    def __init__(self, access_token: str, page_id: str):
+    def __init__(self, access_token: str, page_id: str, api_version: str = "v18.0"):
         """
         Initialize Facebook poster
         
         Args:
             access_token: Facebook page access token
             page_id: Facebook page ID
+            api_version: Facebook Graph API version (default: v18.0)
         """
         super().__init__("Facebook")
         self.access_token = access_token
         self.page_id = page_id
-        self.api_version = "v18.0"
+        self.api_version = api_version
         self.base_url = f"https://graph.facebook.com/{self.api_version}"
 
     def authenticate(self) -> bool:
