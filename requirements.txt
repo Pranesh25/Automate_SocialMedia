@@ -1,0 +1,18 @@
+# Core dependencies
+python-dotenv==1.0.0
+requests==2.31.0
+Pillow==10.2.0
+
+# Social media platform SDKs
+tweepy==4.14.0
+facebook-sdk==3.1.0
+instagrapi==2.0.0
+linkedin-api==2.2.0
+
+# Scheduling
+schedule==1.2.0
+APScheduler==3.10.4
+
+# Logging and utilities
+colorlog==6.8.0
+python-dateutil==2.8.2
