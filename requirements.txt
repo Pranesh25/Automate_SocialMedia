@@ -1,7 +1,7 @@
 # Core dependencies
 python-dotenv==1.0.0
 requests==2.31.0
-Pillow==10.2.0
+Pillow==10.3.0
 
 # Social media platform SDKs
 tweepy==4.14.0
