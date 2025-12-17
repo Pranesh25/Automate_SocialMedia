@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #09090b;
+  /* Zinc 950 */
+  --foreground: #fafafa;
+  /* Zinc 50 */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Utilities for that "Linear" feel */
+@layer utilities {
+  .glass-panel {
+    background: rgba(24, 24, 27, 0.6);
+    /* Zinc 900 with opacity */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .input-ghost {
+    background: transparent;
+    border: none;
+    outline: none;
+    transition: all 0.2s;
+  }
+
+  .input-ghost:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  /* Hide scrollbar for cleaner UI */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
